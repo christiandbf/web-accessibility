@@ -85,3 +85,7 @@ If a dialog already has a visible title bar, the text inside that bar can be use
  ```
 
 > :warning: **Keep in mind that a dialog's title and description text do not have to be focusable in order to be perceived by screen readers operating in a non-virtual mode. The combination of the ARIA dialog role and labeling techniques should make the screen reader announce the dialog's information when focus is moved into it.**
+
+  
+  ## Aria Live
+https://dockyard.com/blog/2020/03/02/accessible-loading-indicatorswith-no-extra-elements

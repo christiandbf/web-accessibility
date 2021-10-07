@@ -10,9 +10,20 @@ It is the inclusive practice of ensuring there are no barriers that prevent inte
 
 [See Dominos's case](https://www.cnbc.com/2019/10/07/dominos-supreme-court.html)
 
+## ADA
+
+The Americans with Disabilities Act was instituted in 1990 in an effort to end discrimination based on differing abilities.
+This was a fairly revolutionary addition that led to the widespread adoption of wheelchair access ramps, accessible restroom facilities, and many other equal-access accommodations that have become a regular part of most American workplaces.  
+
+The WCAG is an internationally recognized set of guidelines for digital accessibility. It was established and is managed by the international web standards group, the W3C. The de facto standard in the US - recognized (yet not set) by the DOJ (Department of Justice), the courts, and advocates is the WCAG A, AA.
+
+[See more](https://www.accessibility.works/blog/2021-ada-wcag-website-accessibility-standards-requirements/)
+
 ## WCAG (Web Content Accessibility Guidelines)
 
 Guidelines to make websites more accessible. Created by W3C (Also Web standards creators) under the initiative of WAI.
+
+WCAG 2.0 and WCAG 2.1 are stable, referenceable technical standards. They have 12-13 guidelines that are organized under 4 principles: perceivable, operable, understandable, and robust. For each guideline, there are testable success criteria, which are at three levels: A, AA, and AAA.
 
 Current version of WCAG is 2.1 released on June 5, 2018.
 
@@ -50,42 +61,16 @@ People with certain disabilities use display and input technologies to access on
 * **Screen magnification software** - used to enlarge screen content to make it easier to read for users with a partial sight impairment.
 * **Alternative Input Devices**- an alternative to the typical mouse and keyboard interaction for users with physical or cognitive impairment (head pointers, motion tracking or eye tracking, single switch entry devices, large-print and tactile keyboards, speech input software...).
 
+## Tools for testing web accessibility
 
-
-## ARIA: dialog role
-
-The dialog role is used to mark up an HTML based application dialog or window that separates content or UI from the rest of the web application or page. Dialogs are generally placed on top of the rest of the page content using an overlay. Dialogs can be either non-modal (it's still possible to interact with content outside of the dialog) or modal (only the content in the dialog can be interacted with).
-
-```html
-<div role="dialog" aria-labelledby="dialog1Title" aria-describedby="dialog1Desc">
-  <h2 id="dialog1Title">Your personal details were successfully updated</h2>
-  <p id="dialog1Desc">You can change your details at any time in the user account section.</p>
-  <button>Close</button>
-</div>
-```
-### Description
-
-Marking up a dialog element with the dialog role helps assistive technology identify the dialog's content as being grouped and separated from the rest of the page content. However, adding role="dialog" alone is not sufficient to make a dialog accessible. Additionally, the following needs to be done:
-
-The dialog must be properly labeled
-Keyboard focus must be managed correctly 
-The sections below describe how these two requirements can be met.
-
-Labeling
-Even though it is not required for the dialog itself to be able to receive focus, it still needs to be labeled. The label given to the dialog will provide contextual information for the interactive controls inside the dialog. In other words, the dialog's label acts like a grouping label for the controls inside it (similar to how a <legend> element provides a grouping label for the controls inside a <fieldset> element).
-
-If a dialog already has a visible title bar, the text inside that bar can be used to label the dialog itself. The best way to achieve this is by using the aria-labelledby attribute to the role="dialog" element. Additionally, if the dialog contains additional descriptive text besides the dialog title, this text can be associated with the dialog using the aria-describedby attribute. This approach is shown in the code snippet below:
- 
-```html
-<div role="dialog" aria-labelledby="dialog1Title" aria-describedby="dialog1Desc">
-  <h2 id="dialog1Title">Your personal details were successfully updated</h2>
-  <p id="dialog1Desc">You can change your details at any time in the user account section.</p>
-  <button>Close</button>
-</div>
- ```
-
-> :warning: **Keep in mind that a dialog's title and description text do not have to be focusable in order to be perceived by screen readers operating in a non-virtual mode. The combination of the ARIA dialog role and labeling techniques should make the screen reader announce the dialog's information when focus is moved into it.**
-
-  
-  ## Aria Live
-https://dockyard.com/blog/2020/03/02/accessible-loading-indicatorswith-no-extra-elements
+* Lighthouse.
+* Disability simulators:
+  * NoCoffee
+  * Web Disability Simulator.
+* Manual testing (keyboard interaction).
+* Screen readers.
+  * NVDA - Firefox.
+  * JAWS - Internet Explorer.
+  * VoiceOver - Safari.
+  * ChromeVox - Google Chrome.
+* Accessibility tree browser.
